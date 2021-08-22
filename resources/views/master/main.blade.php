@@ -18,17 +18,22 @@
                 <li>
                     <a href="/menu2"><p>메뉴2</p></a>
                 </li>
-                <li>
-                    <a href="/menu3"><p>메뉴3</p></a>
-                </li>
-                <li>
-                    <a href="/menu4"><p>메뉴4</p></a>
-                </li>
+                <div class="logincontrol">
+                    <li>
+                        <a href="/menu3"><p>메뉴3</p></a>
+                    </li>
+                    <div class="login">
+                        <li>
+                            <div class="loginselect">
+                                <a href="/login"><p>로그인</p></a>       
+                            </div>
+                            <a href="/menu4"><p>메뉴4</p></a>
+                        </li>
+                    </div>
+                </div>
             </ul>
         </div>
-        <div class="maincontant">
-            <a>페이지 구성요소</a>
-        </div>
+        @yield('content')
     </div>
 </body>
 </html>

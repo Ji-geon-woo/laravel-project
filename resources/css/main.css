@@ -10,8 +10,8 @@
 .mainbar li {
     width: 300px;
     height: 100%;
-    list-style-type: none;
     padding: 65px 50px 5px 50px;
+    list-style-type: none;
     float: left;
 }
 .mainbar li a {
@@ -22,6 +22,15 @@
     text-decoration: none;
     color: #000;
     text-align: center;
+}
+.mainbar .logincontrol li{
+    padding-top: 65px;
+}
+.mainbar .logincontrol .login li{
+    padding-top: 20px;
+}
+.mainbar .logincontrol .login .loginselect{
+    padding-bottom: 20px;
 }
 .maincontant {
     width: 1396px;
