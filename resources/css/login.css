@@ -1,0 +1,73 @@
+
+.loginbox {
+    width: 496px;
+    height: 396px;
+    float: left;
+    margin-left: 550px;
+    margin-top: 7%;
+    border: 2px solid #000000;
+}
+.logininner{
+    width: 410px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top : 70px;
+}
+.loginbox .email, .loginbox .password {
+    float: left;
+}
+.loginbox .email p, .loginbox .password p {
+    float: left;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+.loginbox .email input, .loginbox .password input {
+    float: left;
+    width: 250px;
+    height: 50px;
+    background-color: #8AB8F7;
+    border: 2px solid #000000;
+    font-size: 20px;
+}
+.loginbox .password {
+    margin-top: 20px;
+}
+.loginbutton input{
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: aquamarine;
+}
+.emailremeber {
+    margin-top: 15px;
+}
+.emailremeber input{
+    float: left;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #000000;
+}
+.emailremeber p {
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.singup {
+    width: 100%;
+    height: 50px;
+}
+.singup a {
+    float: left;
+    width: 200px;
+    height: 50px;
+    margin: 0px 105px 0px 105px;
+    line-height: 50px;
+    text-align: center;
+    color: #000000;
+}

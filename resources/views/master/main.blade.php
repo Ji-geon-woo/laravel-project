@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ asset('resources/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('resources/css/reset.css') }}" rel="stylesheet">
+    @stack('styles')
     <title>@yield('title')</title>
 </head>
 <body>
