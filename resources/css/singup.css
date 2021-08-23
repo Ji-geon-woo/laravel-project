@@ -1,0 +1,45 @@
+
+.singupbox {
+    width: 496px;
+    height: 476px;
+    float: left;
+    margin-left: 550px;
+    margin-top: 7%;
+    border: 2px solid #000000;
+}
+.singupinner{
+    width: 410px;
+    height: 100%;
+    margin: 0 auto;
+    margin-top : 70px;
+}
+.singupbox .email,.singupbox .name, .singupbox .password {
+    float: left;
+}
+.singupbox .email p,.singupbox .name p, .singupbox .password p {
+    float: left;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 25px;
+}
+.singupbox .email input,.singupbox .name input, .singupbox .password input {
+    float: left;
+    width: 250px;
+    height: 50px;
+    background-color: #8AB8F7;
+    border: 2px solid #000000;
+    font-size: 20px;
+}
+.singupbox .password, .singupbox .name {
+    margin-top: 20px;
+}
+.singupbutton input{
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    background-color: aquamarine;
+}

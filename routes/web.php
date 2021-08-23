@@ -21,4 +21,8 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/singup', function () {
+    return view('singup');
+});
+
 
