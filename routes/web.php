@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MainController; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'MainController@index');
 
-Route::get('/', function () {
-    return view('mainpage');
-});
+Route::get('/', [MainController::class, 'index']);
+
+
+// Route::get('/', function () {
+//     return view('mainpage');
+// });
 
 Route::get('/login', function () {
     return view('login');

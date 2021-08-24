@@ -11,3 +11,6 @@
 
 #### laravel Controller 참고
 ##### https://stackhoarder.com/2019/08/20/laravel-%EA%B8%B0%EB%B3%B8-11-controller/
+
+#### PHP - Mysql Json data 형식으로 불러올경우 한글 깨짐(유니코드화) 해결 참고
+##### https://blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=wono77&logNo=220501994243
