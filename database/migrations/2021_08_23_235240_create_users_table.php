@@ -13,10 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('flights', function (Blueprint $table) {
-            $table->id();
+        Schema::create('userinfo', function (Blueprint $table) {
+            $table->bigIncrements('idx');
+            $table->bigInteger('level');
             $table->string('name');
-            $table->string('airline');
+            $table->string('email');
+            $table->string('password',1000);
             $table->timestamps();
         });
     }
