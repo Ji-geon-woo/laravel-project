@@ -27,6 +27,7 @@
             <div class="singupbutton">
                 <input type="button" value="회원가입">
             </div>
+            <p>{{ $users }}</p>
         </div>
     </div>
 @endsection
