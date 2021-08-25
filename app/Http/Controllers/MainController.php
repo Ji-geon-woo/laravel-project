@@ -8,9 +8,23 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function index () {
-        $users = DB::table('userinfo')->get();
-        $result = json_encode($users,JSON_UNESCAPED_UNICODE);
-        return view('mainpage', ['title' => $result]);
-
+        return view("mainpage");
     }
+    public function singup(Request $request){
+        $email = $request->email;
+        $name  = $request->name;
+        $password = $request->frist_password;
+
+        $values = array('level' => 1, 'name' => $name,'email' => $email,'password' => $password );
+        DB::table('userinfo')->insert($values);
+
+        return $request->all();
+    } 
+    public function email_test(Request $request){
+        $email = $request->email;
+        $email_save = DB::table('userinfo')
+            ->select('email', $email)
+            ->get();
+        return $email_save;
+    } 
 }

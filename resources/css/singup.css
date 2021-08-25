@@ -35,11 +35,27 @@
 .singupbox .password, .singupbox .name {
     margin-top: 20px;
 }
-.singupbutton input{
+.singupbutton button{
     width: 100%;
     height: 50px;
     margin-top: 15px;
     border: 2px solid #000000;
     border-radius: 10px;
     background-color: aquamarine;
+}
+.email_ok {
+    float: left;
+    width: 410px;
+}
+#email_alert {
+    font-size: 20px;
+    text-align: center;
+}
+.password_ok {
+    float: left;
+    width: 410px;
+}
+#password_alert {
+    font-size: 20px;
+    text-align: center;
 }

@@ -1,30 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MainController; 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\MainController;
 
-Route::get('/', [MainController::class, 'index']);
+// Route::get('/', [MainController::class, 'index']);
 
+// Route::post('laravel', [MainController::class, 'fetchExample']);
+// Route::post('laravel', 'MainController@fetchExample');
+Route::post('singup_up', [MainController::class, 'singup']);
+Route::post('email_test', [MainController::class, 'email_test']);
 
-// Route::get('/', function () {
-//     return view('mainpage');
-// });
+Route::get('/', function () {
+    return view('mainpage');
+});
 
-Route::get('/login', function () {
+Route::get('login', function () {
     return view('login');
 });
 
-Route::get('/singup', function () {
+Route::get('singup', function () {
     return view('singup');
 });
 

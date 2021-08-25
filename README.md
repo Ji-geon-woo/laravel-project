@@ -14,3 +14,6 @@
 
 #### PHP - Mysql Json data 형식으로 불러올경우 한글 깨짐(유니코드화) 해결 참고
 ##### https://blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=wono77&logNo=220501994243
+
+#### laravel ajax (Jquery) 참고
+##### https://wondongho.tistory.com/138
