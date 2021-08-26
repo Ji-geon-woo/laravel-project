@@ -8,6 +8,7 @@ use App\Http\Controllers\MainController;
 // Route::post('laravel', [MainController::class, 'fetchExample']);
 // Route::post('laravel', 'MainController@fetchExample');
 Route::post('singup_up', [MainController::class, 'singup']);
+
 Route::post('email_test', [MainController::class, 'email_test']);
 
 Route::get('/', function () {

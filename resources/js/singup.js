@@ -38,20 +38,42 @@ function onClick(){
     }
     if(email_test == null) {
         alert('이메일 양식을 다시 한번 확인해주세요.');
+        return 0;
     }
     if(password_test  == null) {
         alert('비밀번호를 다시 한번 확인해주세요.');
+        return 0;
     }
     if(name == '') {
         alert('이름을 다시 한번 확인해주세요.');
+        return 0;
     }
 }
 
-function onChange_email(){
-    let email = document.querySelector('#email').value;
+async  function onChange_email(){
     var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-    let url = 'email_test';
-    fetch(url, {
+    let email = document.querySelector('#email').value;
+    let test = await email_test();
+    
+
+    document.querySelector('.email_ok').style.margin='20px 0 0 0';
+    document.querySelector('.singupbox ').style.height='536px';
+    if (email.match(regExp) != null) {
+        if(test != true) {
+            document.querySelector("#email_alert").innerHTML = "올바른 형식의 이메일 입니다.";
+            return 1;
+        }
+        document.querySelector("#email_alert").innerHTML = "중복된 이메일 입니다.";
+    }
+    if (email.match(regExp) == null){
+        document.querySelector("#email_alert").innerHTML = "올바르지 않는 이메일 입니다.";
+    }
+}
+
+async function email_test(){
+    let email = document.querySelector('#email').value;
+    const url = 'email_test';
+    return fetch(url, {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json, text-plain, */*",
@@ -65,19 +87,18 @@ function onChange_email(){
             })
         })
         .then(response => response.json())
-        .then(response => console.log('Success:', JSON.stringify(response)))
-        .catch(function(error) {
+        // .then(response => console.log('Success:', JSON.stringify(response)))
+        .then(response => {
+            if(response[0] == true){
+                return true;
+            }
+            if(response[0] != true){
+                return false;
+            }
+        })
+        .catch((error) => {
             console.log(error);
         });
-    document.querySelector('.email_ok').style.margin='20px 0 0 0';
-    document.querySelector('.singupbox ').style.height='536px';
-    if (email.match(regExp) != null) {
-        document.querySelector("#email_alert").innerHTML = "올바른 형식의 이메일 입니다.";
-        return 1;
-    }
-    if (email.match(regExp) == null){
-        document.querySelector("#email_alert").innerHTML = "올바르지 않는 이메일 입니다.";
-    }
 }
 
 function onChange_password(){
@@ -96,3 +117,4 @@ function onChange_password(){
         document.querySelector("#password_alert").innerHTML = "동일하지 않는 비밀번호 입니다.";
     }
 }
+

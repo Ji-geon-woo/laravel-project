@@ -10,6 +10,7 @@ class MainController extends Controller
     public function index () {
         return view("mainpage");
     }
+
     public function singup(Request $request){
         $email = $request->email;
         $name  = $request->name;
@@ -20,11 +21,18 @@ class MainController extends Controller
 
         return $request->all();
     } 
+
     public function email_test(Request $request){
         $email = $request->email;
-        $email_save = DB::table('userinfo')
-            ->select('email', $email)
-            ->get();
-        return $email_save;
+        $email_data = DB::table('userinfo')->where('email', $email)->first();
+
+        if($email_data != null) {
+            $return_data = array(true);
+            return json_encode($return_data);
+        }
+        if($email_data == null) {
+            $return_data = array(false);
+            return json_encode($return_data);
+        }
     } 
 }
