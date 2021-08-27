@@ -4,17 +4,18 @@ document.querySelector('#second_password').addEventListener('change', onChange_p
 
 let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-function onClick(){
+async function onClick(){
     // form 데이터 확인
     let url = 'singup_up';
-    let email_test = onChange_email();
+    let email_test = await onChange_email();
     let password_test = onChange_password();
     
     let email = document.querySelector('#email').value;
     let name = document.querySelector('#name').value;
     let frist_password = document.querySelector('#frist_password').value;
 
-    if(email_test != null && password_test != null && name != ''){
+    console.log(email_test);
+    if(email_test == true && password_test != null && name != ''){
         fetch(url, {
             headers: {
                 "Content-Type": "application/json",
@@ -31,26 +32,33 @@ function onClick(){
             })
         })
         .then(response => response.json())
-        .then(response => console.log('Success:', JSON.stringify(response)))
+        .then(response => {
+            alert('회원가입 성공! 메인페이지로 이동합니다!');
+            location.replace('/')
+        })
         .catch(function(error) {
             console.log(error);
         });
     }
     if(email_test == null) {
         alert('이메일 양식을 다시 한번 확인해주세요.');
-        return 0;
+        return null;
+    }
+    if(email_test == false) {
+        alert('이메일이 중복입니다. 다시 한번 확인해주세요.');
+        return null;
     }
     if(password_test  == null) {
         alert('비밀번호를 다시 한번 확인해주세요.');
-        return 0;
+        return null;
     }
     if(name == '') {
         alert('이름을 다시 한번 확인해주세요.');
-        return 0;
+        return null;
     }
 }
 
-async  function onChange_email(){
+async function onChange_email(){
     var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
     let email = document.querySelector('#email').value;
     let test = await email_test();
@@ -61,9 +69,10 @@ async  function onChange_email(){
     if (email.match(regExp) != null) {
         if(test != true) {
             document.querySelector("#email_alert").innerHTML = "올바른 형식의 이메일 입니다.";
-            return 1;
+            return true;
         }
         document.querySelector("#email_alert").innerHTML = "중복된 이메일 입니다.";
+        return false;
     }
     if (email.match(regExp) == null){
         document.querySelector("#email_alert").innerHTML = "올바르지 않는 이메일 입니다.";
