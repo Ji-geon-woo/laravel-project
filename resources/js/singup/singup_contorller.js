@@ -1,10 +1,10 @@
-document.querySelector('#fecth_ajax').addEventListener('click', onClick);
 document.querySelector('#email').addEventListener('change', onChange_email);
 document.querySelector('#second_password').addEventListener('change', onChange_password);
+document.querySelector('#fecth_ajax').addEventListener('click', singup);
 
 let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-async function onClick(){
+async function singup(){
     // form 데이터 확인
     let url = 'singup_up';
     let email_test = await onChange_email();
@@ -62,7 +62,6 @@ async function onChange_email(){
     var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
     let email = document.querySelector('#email').value;
     let test = await email_test();
-    
 
     document.querySelector('.email_ok').style.margin='20px 0 0 0';
     document.querySelector('.singupbox ').style.height='536px';

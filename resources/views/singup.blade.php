@@ -5,11 +5,11 @@
     <link href="{{ asset('resources/css/singup.css') }}" rel="stylesheet">
 @endpush
 @push('scripts')
-    <script src="{{ asset('resources/js/singup.js') }}"></script>
+    <script type="module" src="{{ asset('resources/js/singup/singup_contorller.js') }}"></script>
 @endpush
     <div class="singupbox">
         <div class="singupinner">
-            <form id="sinupform" method="post" action="{{ asset('resources/js/singup.js') }}">
+            <form id="sinupform" method="post" action="">
                 @csrf
                 <div class="singupinput">
                     <div class="email">

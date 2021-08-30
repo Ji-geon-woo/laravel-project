@@ -4,6 +4,9 @@
 @push('styles')
     <link href="{{ asset('resources/css/login.css') }}" rel="stylesheet">
 @endpush
+@push('scripts')
+    <script src="{{ asset('resources/js/login/login.js') }}"></script>
+@endpush
     <div class="loginbox">
         <div class="logininner">
             <div class="logininput">

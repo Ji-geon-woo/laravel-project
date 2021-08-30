@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class MainController extends Controller
 {
@@ -14,8 +15,9 @@ class MainController extends Controller
     public function singup(Request $request){
         $email = $request->email;
         $name  = $request->name;
-        $password = $request->frist_password;
 
+        $password = Hash::make($request->frist_password);
+        
         $values = array('level' => 1, 'name' => $name,'email' => $email,'password' => $password );
         DB::table('userinfo')->insert($values);
 
