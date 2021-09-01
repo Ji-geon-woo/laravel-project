@@ -23,7 +23,7 @@ class MainController extends Controller
 
         return $request->all();
     } 
-
+    
     public function email_test(Request $request){
         $email = $request->email;
         $email_data = DB::table('userinfo')->where('email', $email)->first();

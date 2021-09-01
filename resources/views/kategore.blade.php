@@ -10,16 +10,18 @@
     <div class="kategore_box">
         <div class="kategore_inner">
             <div class="kategore_btn">
-                <button type="submit">카테고리 등록</button>
+                <a href="upload"><button type="submit">카테고리 등록</button></a>
             </div>
             <div class="kategore_list">
                 <table>
-                    <tr>
-                        <th>카테고리</th>
-                        <th>카테고리</th>
-                        <th>카테고리</th>
-                        <th>카테고리</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>카테고리</th>
+                            <th>카테고리명</th>
+                            <th>사용여부</th>
+                            <th>관리</th>
+                        </tr>
+                    </thead>
                 </table>
             </div>
         </div>
