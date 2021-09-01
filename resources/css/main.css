@@ -7,30 +7,35 @@
     height: 100px;
 }
 .mainbar li {
+    float: left;
     width: 300px;
-    height: 100%;
-    padding: 65px 50px 5px 50px;
+    height: 100px;
     list-style-type: none;
     float: left;
+}
+.mainmenu li {
+    margin: 65px 50px 5px 50px;
 }
 .mainbar li a {
     text-decoration: none;
 }
+
 .mainbar li a p {
+    float: left;
+    width: 100%;
     font-size: 30px;
     text-decoration: none;
     color: #000;
     text-align: center;
 }
-.mainbar .logincontrol li{
-    padding-top: 65px;
+.mainbar .logout_box li{
+    margin: 65px 50px 5px 50px;
 }
-.mainbar .logincontrol .login li{
-    padding-top: 20px;
+.mainbar .login_info li{
+    margin: 40px 50px 5px 50px;
 }
-.mainbar .logincontrol .login .loginselect{
-    padding-bottom: 20px;
-}
+
+
 .maincontant {
     width: 1396px;
     height: 596px;

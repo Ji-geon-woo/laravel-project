@@ -33,8 +33,8 @@ async function singup(){
         })
         .then(response => response.json())
         .then(response => {
-            alert('회원가입 성공! 메인페이지로 이동합니다!');
-            location.replace('/')
+            alert('회원가입 성공! 로그인페이지로 이동합니다!');
+            location.replace('/login');
         })
         .catch(function(error) {
             console.log(error);

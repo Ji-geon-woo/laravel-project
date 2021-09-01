@@ -11,6 +11,8 @@ Route::post('singup_up', [MainController::class, 'singup']);
 
 Route::post('email_test', [MainController::class, 'email_test']);
 
+Route::post('login', [MainController::class, 'login']);
+
 Route::get('/', function () {
     return view('mainpage');
 });
@@ -21,6 +23,10 @@ Route::get('login', function () {
 
 Route::get('singup', function () {
     return view('singup');
+});
+
+Route::get('logout', function () {
+    return view('logout');
 });
 
 

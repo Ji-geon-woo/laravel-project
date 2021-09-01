@@ -37,4 +37,24 @@ class MainController extends Controller
             return json_encode($return_data);
         }
     } 
+
+    public function login(Request $request){
+        $email = $request->email;
+        $password= $request->password;
+
+        $userinfo = DB::table('userinfo')->where('email', $email)->first();
+
+        if($userinfo->email != '') {
+            if(Hash::check($password, $userinfo->password) == true) {
+                return json_encode($userinfo->name);
+            }
+            if(Hash::check($password, $userinfo->password) == false) {
+                return json_encode(false);
+            }
+        }  
+
+        if($userinfo->email == '') {
+            return json_encode(false);
+        }
+    } 
 }
