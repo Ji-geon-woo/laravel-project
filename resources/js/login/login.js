@@ -56,6 +56,9 @@ async function login(){
             console.log(error);
         });
     }
+    if(email_testing == false || email_testing == null || password == null ) {
+        alert('이메일, 비밀번호를 다시 한번 확인해주세요!')
+    }
 }
 
 async function email_test(){

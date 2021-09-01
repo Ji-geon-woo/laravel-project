@@ -19,3 +19,9 @@
 
 #### fetch promise 참고
 ##### https://github.com/Keyang/node-csvtojson/issues/278
+
+### 09-01
+
+#### Cookie 참고
+##### https://developer.mozilla.org/ko/docs/Web/API/Document/cookie
+

@@ -17,7 +17,7 @@
             <ul class="mainbarContent">
                 <div class="mainmenu">
                     <li>
-                        <a href="/menu1"><p>메뉴1</p></a>
+                        <a href="/kategore"><p>카테고리</p></a>
                     </li>
                     <li>
                         <a href="/menu2"><p>메뉴2</p></a>

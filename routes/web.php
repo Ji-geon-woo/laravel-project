@@ -25,8 +25,9 @@ Route::get('singup', function () {
     return view('singup');
 });
 
-Route::get('logout', function () {
-    return view('logout');
+Route::get('kategore', function () {
+    return view('kategore');
 });
+
 
 
