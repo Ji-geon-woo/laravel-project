@@ -5,7 +5,7 @@
     <link href="{{ asset('resources/css/kategore.css') }}" rel="stylesheet">
 @endpush
 @push('scripts')
-    {{--  <script src="{{ asset('resources/js/login/login.js') }}"></script>  --}}
+    <script src="{{ asset('resources/js/kategore.js') }}"></script>
 @endpush
     <div class="kategore_box">
         <div class="kategore_inner">
@@ -13,7 +13,7 @@
                 <a href="upload"><button type="submit">카테고리 등록</button></a>
             </div>
             <div class="kategore_list">
-                <table>
+                <table class="kategore_table">
                     <thead>
                         <tr>
                             <th>카테고리</th>
@@ -22,6 +22,8 @@
                             <th>관리</th>
                         </tr>
                     </thead>
+                    <tbody>
+                    </tbody>
                 </table>
             </div>
         </div>

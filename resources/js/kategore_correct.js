@@ -1,36 +1,18 @@
-document.querySelector('.kategore_upload_btn button').addEventListener('click',kategore_upload);
-document.querySelector('.kategore_name_value').addEventListener('change',kategore_name);
 let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-async function kategore_upload() {
-    const used = document.querySelector('input[name="on"]').checked;
-    const un_used = document.querySelector('input[name="off"]').checked;
-    const kategore_value = document.querySelector('.kategore_name_value').value;
-    const kategore_name_test = await kategore_name();
-    const url = 'kategore_upload_serve';
-    let on_off;
-    if(used == true && un_used == true){
-        alert('올바르지 않는 선택 입니다.');
-        return 0;
-    }
-    if(used == false && un_used == false) {
-        alert('올바르지 않는 선택 입니다.');
-        return 0;
-    }
-    if(kategore_value == null) {
-        alert('카테고리 입력 값을 다시 확인해주세요.');
-        return 0;
-    }
-    if(used == true) {
-        on_off = '사용';
-    }
-    if(used == false){
-        on_off = '미사용';
-    }
-    if(kategore_name_test == true){
-        alert('중복된 카테고리 값 입니다.');
-        return 0;
-    }
-    fetch(url, {
+data_loading();
+document.querySelector('.kategore_name_value').addEventListener('change',kategore_name);
+
+async function data_loading() {
+    let server_data = await kategore_serve_search();
+    document.querySelector('.kategore_idx_value').value = server_data['idx'];
+    document.querySelector('.kategore_name_value').value = server_data['name'];
+    console.log(server_data['idx']);
+}
+
+async function kategore_serve_search() {
+    let idx_value = sessionStorage.getItem('kategore_change');
+    let url = 'kategore_change';
+    return fetch(url, {
         headers: {
             "Content-Type": "application/json",
             "Accept": "application/json, text-plain, */*",
@@ -40,18 +22,18 @@ async function kategore_upload() {
         method: 'post',
         credentials: "same-origin",
         body: JSON.stringify({
-            kategore_value : kategore_value,
-            onoff: on_off
+            kategore_idx : idx_value 
         })
     })
     .then(response => response.json())
     .then(response => {
-        alert('등록완료!')
+        return response;
     })
     .catch(function(error) {
         console.log(error);
     });
 }
+
 async function kategore_name() {
     let hell = await kategore_redundancy_test();
 

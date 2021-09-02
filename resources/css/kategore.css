@@ -33,9 +33,12 @@
     border-collapse: separate;
     border-spacing: 30px 10px;
 }
-.kategore_list th {
+.kategore_table th {
     width: 198px;
     height: 58px;
     line-height: 58px;
     border: 1px solid #000;
+}
+.kategore_table td {
+    text-align: center;
 }
