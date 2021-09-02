@@ -46,7 +46,8 @@ async function kategore_upload() {
     })
     .then(response => response.json())
     .then(response => {
-        alert('등록완료!')
+        alert('등록완료!');
+        location.href = 'kategore';
     })
     .catch(function(error) {
         console.log(error);

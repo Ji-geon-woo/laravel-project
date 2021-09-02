@@ -18,6 +18,8 @@ Route::post('kategore_select', [kategore_controller::class, 'kategore_select']);
 
 Route::post('kategore_change', [kategore_controller::class, 'kategore_change']);
 
+Route::post('kategore_change_serve', [kategore_controller::class, 'kategore_change_serve']);
+
 Route::get('/', function () {
     return view('mainpage');
 });

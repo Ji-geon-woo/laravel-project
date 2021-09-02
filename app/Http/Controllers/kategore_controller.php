@@ -43,4 +43,8 @@ class kategore_controller extends Controller
 
         return json_encode($server_data);
     } 
+
+    public function kategore_change_serve(Request $request) {
+        return json_encode(true);
+    }   
 }
