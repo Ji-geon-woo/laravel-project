@@ -44,6 +44,11 @@ Route::get('correct', function () {
     return view('kategore_correct');
 });
 
+Route::get('brand', function () {
+    return view('brand');
+});
+
+
 
 
 

@@ -1,13 +1,15 @@
 let token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-data_loading();
 document.querySelector('.kategore_name_value').addEventListener('change',kategore_name);
 document.querySelector('.kategore_upload_btn button').addEventListener('click',kategore_upload);
+data_loading();
+
 // 기본 데이터 세팅
 async function data_loading() {
     let server_data = await kategore_serve_search();
     document.querySelector('.kategore_idx_value').value = server_data['idx'];
     document.querySelector('.kategore_name_value').value = server_data['name'];
 }
+
 // 해당 칼럼 긁어오기
 async function kategore_serve_search() {
     let idx_value = sessionStorage.getItem('kategore_change');
@@ -41,6 +43,7 @@ async function kategore_name() {
     let kategore_name_1 = document.querySelector('.kategore_name_value').value;
     let kategore_name_2 = server_data['name'];
 
+    // 중복 검사 if
     if(hell == true){
         if(kategore_name_1 == kategore_name_2) {
             document.querySelector('.kategore_check_tag').innerHTML = "중복되지 않는 상품명 입니다."
@@ -86,6 +89,7 @@ async function kategore_upload() {
     const used = document.querySelector('input[name="on"]').checked;
     const un_used = document.querySelector('input[name="off"]').checked;
     const kategore_value = document.querySelector('.kategore_name_value').value;
+    const idx_value = sessionStorage.getItem('kategore_change');
     const kategore_name_test = await kategore_name();
     const url = 'kategore_change_serve';
     let on_off;
@@ -120,14 +124,17 @@ async function kategore_upload() {
             },
         method: 'post',
         credentials: "same-origin",
-        // body: JSON.stringify({
-        //     kategore_value : kategore_value,
-        //     onoff: on_off
-        // })
+        body: JSON.stringify({
+            idx : idx_value,
+            name_value : kategore_value,
+            onoff: on_off
+        })
     })
     .then(response => response.json())
     .then(response => {
-        alert(response);
+        console.log('null');
+        alert('수정 완료! 카테고리로 넘어갑니다');
+        location.href = '/kategore';
     })
     .catch(function(error) {
         console.log(error);

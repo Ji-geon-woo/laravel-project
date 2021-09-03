@@ -17,16 +17,16 @@
             <ul class="mainbarContent">
                 <div class="mainmenu">
                     <li>
-                        <a href="/kategore"><p>카테고리</p></a>
+                        <a href="/"><p>메인</p></a>
                     </li>
                     <li>
-                        <a href="/menu2"><p>메뉴2</p></a>
+                        <a href="/kategore"><p>카테고리</p></a>
                     </li>
                 </div>
                 <div class="logout_box">
                     <li>
                         <a href="/" onclick="del_session()"><p class="log_out"></p></a>
-                        <a href="/menu3"><p>메뉴3</p></a>
+                        <a href="/brand"><p>브랜드</p></a>
                     </li>
                 </div>
                 <div class="login_info">

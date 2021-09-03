@@ -45,6 +45,14 @@ class kategore_controller extends Controller
     } 
 
     public function kategore_change_serve(Request $request) {
-        return json_encode(true);
+        $idx = $request->idx;
+        $name = $request->name_value;
+        $onoff = $request->onoff;
+        
+
+        $update_value = array('name' => $name, 'use' => $onoff);
+
+        $num = DB::table('kategore')->where('idx', $idx)->update(['name' => $name],['use' => $onoff]);
+        return json_encode(null);
     }   
 }
