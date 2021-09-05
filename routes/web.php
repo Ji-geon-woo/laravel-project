@@ -48,6 +48,10 @@ Route::get('brand', function () {
     return view('brand');
 });
 
+Route::get('brand_upload', function () {
+    return view('brand_upload');
+});
+
 
 
 

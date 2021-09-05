@@ -1,0 +1,42 @@
+.upload_box {
+    width: 100%;
+    height: 600px;
+}
+.upload_inner {
+    width: 798px;
+    height: 718px;
+    margin: 75px auto;
+    border: 1px solid #000;
+}
+.name_ko, .name_en, .explanation_text{
+    float: left;
+    margin-top: 30px;
+}
+.name_ko p, .name_en p, .explanation_text p{
+    float: left;
+    width: 250px;
+    height: 70px;
+    font-size: 35px;
+    text-align: center;
+    line-height: 70px;
+}
+.name_ko input, .name_en input {
+    float: left;
+    width: 480px;
+    height: 70px;
+    font-size: 20px;
+}
+.explanation_text textarea {
+    float: left;
+    width: 480px;
+    height: 280px;
+    font-size: 20px;
+}
+button {
+    width: 700px;
+    height: 60px;
+    margin: 20px 0px 0px 49px;
+    border-radius: 10px;
+    font-size: 30px;
+    background-color: aquamarine;
+}
