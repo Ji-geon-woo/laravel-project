@@ -5,7 +5,7 @@
     <link href="{{ asset('resources/css/brand_upload.css') }}" rel="stylesheet">
 @endpush
 @push('scripts')
-    {{-- <script type="module" src="{{ asset('resources/js/singup/singup_contorller.js') }}"></script> --}}
+    <script type="module" src="{{ asset('resources/js/brand_upload.js') }}"></script>
 @endpush
     <div class="upload_box">
         <div class="upload_inner">
@@ -27,8 +27,8 @@
                 <p>설명</p>
                 <textarea cols="50" rows="10"></textarea>
             </div>
-            <a href=""><button>등록</button></a>
-            <a href=""><button>취소</button></a>
+            <button class="upload_btn">등록</button>
+            <button class="cnl">취소</button>
         </div>
     </div>
 @endsection

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\kategore_controller;
+use App\Http\Controllers\brand_controller;
+use App\Http\Controllers\test_controller;
 
 Route::post('singup_up', [MainController::class, 'singup']);
 
@@ -19,6 +21,16 @@ Route::post('kategore_select', [kategore_controller::class, 'kategore_select']);
 Route::post('kategore_change', [kategore_controller::class, 'kategore_change']);
 
 Route::post('kategore_change_serve', [kategore_controller::class, 'kategore_change_serve']);
+
+Route::post('brand_upload_serve',[brand_controller::class, 'upload']);
+
+Route::post('name_ko_select',[brand_controller::class, 'name_ko_select']);
+
+Route::post('name_en_select',[brand_controller::class, 'name_en_select']);
+
+Route::get('brand',[brand_controller::class, 'view']);
+
+Route::get('test',[test_controller::class, 'view']);
 
 Route::get('/', function () {
     return view('mainpage');
@@ -42,10 +54,6 @@ Route::get('upload', function () {
 
 Route::get('correct', function () {
     return view('kategore_correct');
-});
-
-Route::get('brand', function () {
-    return view('brand');
 });
 
 Route::get('brand_upload', function () {

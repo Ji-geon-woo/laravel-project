@@ -5,7 +5,7 @@
     <link href="{{ asset('resources/css/brand.css') }}" rel="stylesheet">
 @endpush
 @push('scripts')
-    {{-- <script type="module" src="{{ asset('resources/js/singup/singup_contorller.js') }}"></script> --}}
+    <script type="module" src="{{ asset('resources/js/brand.js') }}"></script>
 @endpush
     <div class="brand_box">
         <div class="brand_inner">
@@ -23,12 +23,26 @@
                         </tr>
                     </thead>
                     <tbody>
+                            @foreach ($users as $user)
+                            <tr>
+                                <td>
+                                    {{ $user->idx }}
+                                </td>
+                                <td>
+                                    {{ $user->name_ko }}
+                                </td>
+                                <td>
+                                    {{ $user->name_en }}
+                                </td>
+                                <td>
+                                    <p>null</p>
+                                </td>
+                            </tr>
+                            @endforeach
                     </tbody>
                 </table>
             </div>
-            <div class="direction_key">
-                <p><< < 1 2 3 4 5 > >></p>
-            </div>
+                {{ $users->links() }}
         </div>
     </div>
 @endsection

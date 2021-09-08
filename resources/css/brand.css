@@ -43,3 +43,9 @@
     line-height: 100px;
     text-align: center;
 }
+td {
+    text-align: center;
+}
+.w-5 {
+    display: none;
+}
