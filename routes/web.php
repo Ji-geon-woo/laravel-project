@@ -5,6 +5,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\kategore_controller;
 use App\Http\Controllers\brand_controller;
 use App\Http\Controllers\test_controller;
+use App\Models\brand;
 
 Route::post('singup_up', [MainController::class, 'singup']);
 
@@ -30,7 +31,17 @@ Route::post('name_en_select',[brand_controller::class, 'name_en_select']);
 
 Route::get('brand',[brand_controller::class, 'view']);
 
-Route::get('test',[test_controller::class, 'view']);
+Route::get('brand_change',[brand_controller::class,'change']);
+
+Route::post('brand_select',[brand_controller::class, 'select']);
+
+Route::get('brand_delete',[brand_controller::class, 'brand_delete']);
+
+Route::post('brand_change_serve',[brand_controller::class, 'change_serve']);
+
+Route::post('brand_delete_serve',[brand_controller::class, 'delete_serve']);
+
+// Route::get('test',[test_controller::class, 'index']);
 
 Route::get('/', function () {
     return view('mainpage');
@@ -59,8 +70,6 @@ Route::get('correct', function () {
 Route::get('brand_upload', function () {
     return view('brand_upload');
 });
-
-
 
 
 

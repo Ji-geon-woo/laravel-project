@@ -49,7 +49,6 @@ class kategore_controller extends Controller
         $name = $request->name_value;
         $onoff = $request->onoff;
         
-
         $update_value = array('name' => $name, 'use' => $onoff);
 
         $num = DB::table('kategore')->where('idx', $idx)->update(['name' => $name],['use' => $onoff]);

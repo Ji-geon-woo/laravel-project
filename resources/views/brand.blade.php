@@ -5,7 +5,7 @@
     <link href="{{ asset('resources/css/brand.css') }}" rel="stylesheet">
 @endpush
 @push('scripts')
-    <script type="module" src="{{ asset('resources/js/brand.js') }}"></script>
+    <script src="{{ asset('resources/js/brand.js') }}"></script>
 @endpush
     <div class="brand_box">
         <div class="brand_inner">
@@ -35,14 +35,13 @@
                                     {{ $user->name_en }}
                                 </td>
                                 <td>
-                                    <p>null</p>
+                                    <a href="brand_change" onclick="myFunction({{ $user->idx }})">수정</a>/<a href="brand_delete" onclick="myFunction({{ $user->idx }})">삭제</a>
                                 </td>
                             </tr>
                             @endforeach
                     </tbody>
                 </table>
             </div>
-                {{ $users->links() }}
         </div>
     </div>
 @endsection

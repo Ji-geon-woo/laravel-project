@@ -1,4 +1,5 @@
 <?php
+// test_controller.php
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
@@ -9,8 +10,8 @@ use Illuminate\Support\Facades\Hash;
 class test_controller extends Controller
 {
     public function index() {
-        $users = DB::table('brand')->paginate(2);
+        $users = DB::table('brand')->paginate(5);
 
-        return view('brand')->with('users', $users);
+        return view('test')->with('users', $users);
     }
 }

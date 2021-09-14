@@ -1,0 +1,59 @@
+.upload_box {
+    width: 100%;
+}
+.upload_inner {
+    width: 798px;
+    height: 717px;
+    margin: 75px auto;
+    border: 1px solid #000;
+}
+.name_ko {
+    margin-top: 20px;
+}
+.name_en, .explanation_text{
+    float: left;
+    margin-top: 5px;
+}
+.idx {
+    margin: 10px 0px;
+}
+.name_ko_test p, .name_en_test p {
+    float: left;
+    width: 100%;
+    height: 20px;
+    font-size: 15px;
+    text-align: center;
+    margin: 5px 0px;
+}
+.name_ko, .name_en, .idx{
+    width: 100%;
+    height: 50px;
+}
+.name_ko p, .name_en p,.idx p, .explanation_text p{
+    float: left;
+    width: 250px;
+    height: 50px;
+    font-size: 35px;
+    text-align: center;
+    line-height: 70px;
+}
+.name_ko input, .name_en input,.idx input {
+    float: left;
+    width: 480px;
+    height: 50px;
+    font-size: 20px;
+}
+.explanation_text textarea {
+    float: left;
+    width: 480px;
+    height: 280px;
+    font-size: 20px;
+}
+button {
+    width: 700px;
+    height: 60px;
+    margin: 20px 0px 0px 49px;
+    border-radius: 10px;
+    font-size: 30px;
+    background-color: aquamarine;
+}

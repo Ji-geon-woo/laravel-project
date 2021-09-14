@@ -1,14 +1,18 @@
 @extends('master.main')
-@section('title','brand')
+@section('title','Singup')
 @section('content')
 @push('styles')
-    <link href="{{ asset('resources/css/brand_upload.css') }}" rel="stylesheet">
+    <link href="{{ asset('resources/css/brand_change.css') }}" rel="stylesheet">
 @endpush
 @push('scripts')
-    <script type="module" src="{{ asset('resources/js/brand_upload.js') }}"></script>
+    <script src="{{ asset('resources/js/brand_change.js') }}"></script>
 @endpush
     <div class="upload_box">
         <div class="upload_inner">
+            <div class="idx">
+                <p>브랜드 번호</p>
+                <input type="text"readonly>
+            </div>
             <div class="name_ko">
                 <p>한글명</p>
                 <input type="text">
@@ -27,7 +31,7 @@
                 <p>설명</p>
                 <textarea cols="50" rows="10"></textarea>
             </div>
-            <button class="upload_btn">등록</button>
+            <button class="upload_btn">수정</button>
             <button class="cnl">취소</button>
         </div>
     </div>

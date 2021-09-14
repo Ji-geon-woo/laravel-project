@@ -21,6 +21,7 @@ class BrandTable extends Migration
             $table->string('name_ko');
             $table->string('name_en');
             $table->string('explantion');
+            $table->softDeletes();
             $table->timestamps(); 
         });
     }
