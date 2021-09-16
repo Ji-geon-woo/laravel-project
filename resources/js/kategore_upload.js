@@ -53,6 +53,7 @@ async function kategore_upload() {
         console.log(error);
     });
 }
+
 async function kategore_name() {
     let hell = await kategore_redundancy_test();
 
@@ -65,6 +66,7 @@ async function kategore_name() {
         return false;
     }
 }
+
 async function kategore_redundancy_test(){
     const kategore_value = document.querySelector('.kategore_name_value').value;
     const url = 'kategore_redundancy';

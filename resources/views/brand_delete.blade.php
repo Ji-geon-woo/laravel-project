@@ -1,2 +1,7 @@
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<script src="{{ asset('resources/js/brand_delete.js') }}"></script>
+@extends('master.main')
+@section('title','delete')
+@section('content')
+@push('scripts')
+    <script src="{{ asset('resources/js/brand_delete.js') }}"></script>
+@endpush
+@endsection

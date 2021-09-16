@@ -5,13 +5,16 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\kategore_controller;
 use App\Http\Controllers\brand_controller;
 use App\Http\Controllers\test_controller;
-use App\Models\brand;
+
+// login/singup route
 
 Route::post('singup_up', [MainController::class, 'singup']);
 
 Route::post('email_test', [MainController::class, 'email_test']);
 
 Route::post('login', [MainController::class, 'login']);
+
+// kategore route
 
 Route::post('kategore_upload_serve', [kategore_controller::class, 'kategore_upload']);
 
@@ -23,13 +26,15 @@ Route::post('kategore_change', [kategore_controller::class, 'kategore_change']);
 
 Route::post('kategore_change_serve', [kategore_controller::class, 'kategore_change_serve']);
 
+// brand route
+
+Route::get('brand',[brand_controller::class, 'view']);
+
 Route::post('brand_upload_serve',[brand_controller::class, 'upload']);
 
 Route::post('name_ko_select',[brand_controller::class, 'name_ko_select']);
 
 Route::post('name_en_select',[brand_controller::class, 'name_en_select']);
-
-Route::get('brand',[brand_controller::class, 'view']);
 
 Route::get('brand_change',[brand_controller::class,'change']);
 
@@ -69,6 +74,10 @@ Route::get('correct', function () {
 
 Route::get('brand_upload', function () {
     return view('brand_upload');
+});
+
+Route::get('brand_shoplist', function () {
+    return view('shoplist.index');
 });
 
 

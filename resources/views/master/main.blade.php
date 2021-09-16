@@ -33,7 +33,7 @@
                     <li>
                         <a href="/login"><p class="login_text">로그인</p></a>
                         <a href="/log-out"><p class="login_user_name_text"></p></a>               
-                        <a href="/menu4"><p>메뉴4</p></a>
+                        <a href="/brand_shoplist"><p>상품관리</p></a>
                     </li>
                 </div>
             </ul>

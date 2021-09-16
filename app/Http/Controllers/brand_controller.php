@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Illuminate\Http\Request;
-// use App\Models\Brand;
+use App\Models\Brand;
 
 class brand_controller extends Controller
 {
+    use SoftDeletes;
+
+    public function delete_serve(Request $request){
+        $idx = $request->brand_idx;
+
+        $value = Brand::where('idx', $idx)->delete();
+
+        return json_encode($value);
+    }
+
     public function upload(Request $request){
         $name_ko = $request->name_ko;
         $name_en = $request->name_en;
@@ -15,7 +26,7 @@ class brand_controller extends Controller
 
         $server_upload_value = array('name_ko' => $name_ko,'name_en' => $name_en, 'explantion' => $explantion);
 
-        DB::table('brand')->insert($server_upload_value);
+        Brand::insert($server_upload_value);
 
         return $request->all();
     }
@@ -23,7 +34,7 @@ class brand_controller extends Controller
     public function name_ko_select(Request $request){
         $name_ko = $request->name_ko;
         
-        $name_ko_redundancy = DB::table('brand')->where('name_ko', $name_ko)->first();
+        $name_ko_redundancy = Brand::where('name_ko', $name_ko)->first();
         if($name_ko_redundancy != null) {
             return json_encode(true);
         }
@@ -35,7 +46,7 @@ class brand_controller extends Controller
     public function name_en_select(Request $request){
         $name_en = $request->name_en;
         
-        $name_en_redundancy = DB::table('brand')->where('name_en', $name_en)->first();
+        $name_en_redundancy = Brand::where('name_en', $name_en)->first();
         if($name_en_redundancy != null) {
             return json_encode(true);
         }
@@ -45,7 +56,7 @@ class brand_controller extends Controller
     }
 
     public function view() {
-        $users = DB::table('brand')->paginate(8);
+        $users = Brand::paginate(8);
 
         return view('brand')->with('users', $users);
     }
@@ -57,7 +68,7 @@ class brand_controller extends Controller
     public function select(Request $request) {
         $idx = $request->brand_idx;
 
-        $data = DB::table('brand')->where('idx',$idx)->get();
+        $data = Brand::where('idx',$idx)->get();
 
         return json_encode($data[0]);
     }
@@ -67,22 +78,15 @@ class brand_controller extends Controller
         $name_ko = $request->name_ko;
         $name_en = $request->name_en;
         $explantion = $request->explantion;
-
-        $num = DB::table('brand')->where('idx', $idx)->update(['name_ko' => $name_ko],['name_en' => $name_en],['explation' => $explantion]);
-        return json_encode(null);
+        $server_upload_value = array('name_ko' => $name_ko,'name_en' => $name_en, 'explantion' => $explantion);
+        // ['name_ko' => $name_ko],['name_en' => $name_en],['explation' => $explantion]
+        $num = Brand::where('idx', $idx)->update($server_upload_value);
+        return json_encode($idx);
     }   
 
     public function brand_delete() {
         return view('brand_delete');
     }
     
-    public function delete_serve(Request $request){
-        $idx = $request->brand_idx;
-        $ide = 1;
-        echo $ide;
-
-        $value = DB::table('brand')->where('idx', $idx)->delete();
-
-        return json_encode(null);
-    }
+    
 }  
