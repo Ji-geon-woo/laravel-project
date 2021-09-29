@@ -80,5 +80,8 @@ Route::get('brand_shoplist', function () {
     return view('shoplist.index');
 });
 
+Route::get('shop_upload', function () {
+    return view('shoplist.upload');
+});
 
 

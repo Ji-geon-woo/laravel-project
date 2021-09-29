@@ -1,0 +1,158 @@
+/* list border css */
+.shop_list_inner {
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    border: 1px solid #000;
+    margin: 80px auto;
+}
+
+/* list search css */
+.list_search {
+    width: 100%;
+    height: 50px;
+}
+.list_search p {
+    float: left;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+}
+.search_list select {
+    float: left;
+    width: 100px;
+    height: 30px;
+    margin: 10px;
+}
+.search_input input {
+    float: left;
+    width: 400px;
+    height: 40px;
+    margin: 5px 75px;
+}
+.search_btn input {
+    width: 120px;
+    height: 40px;
+    margin: 5px;
+}
+
+/* list_state */
+.list_state {
+    float: left;
+    width: 100%;
+    height: 50px;
+}
+.list_state_name{
+    float: left;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+}
+.checkbox_list input {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+}
+.checkbox_list p {
+    float: left;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+/* shop_price */
+.shop_price {
+    float: left;
+    width: 100%;
+    height: 50px;
+}
+.shop_price_name {
+    float: left;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+}
+.price_range input{
+    float: left;
+    width: 200px;
+    height: 40px;
+    margin: 5px;
+}
+.price_range p {
+    float: left;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    margin: 0px 20px;
+}
+
+/* */
+.day_update {
+    float: left;
+    width: 100%;
+    height: 50px;
+}
+.day_update_name {
+    float: left;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+}
+.day_range input{
+    float: left;
+    width: 200px;
+    height: 40px;
+    margin: 5px;
+}
+.day_range p {
+    float: left;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    text-align: center;
+    margin: 0px 20px;
+}
+.shop_list {
+    float: left;
+    width: 100%;
+    height: 400px;
+}
+.shop_list p {
+    float: left;
+    width: 180px;
+    margin-left: 20px;
+    margin-top: 10px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.shop_inner {
+    float: left;
+    width: 1160px;
+    height: 310px;
+    margin-left: 20px;
+    border: 1px solid #000;
+}
+.shop_inner table {
+    border-collapse: separate;
+    border-spacing: 30px 10px;
+}
+.shop_inner th {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #000;
+}
